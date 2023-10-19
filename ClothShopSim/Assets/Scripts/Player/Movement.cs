@@ -27,8 +27,8 @@ namespace ClothesGame.Player {
         }
 
         private void Awake() {
-            InputManager.Instance.PlayerMovement.performed += MovementAction;
-            InputManager.Instance.PlayerMovement.canceled += MovementAction;
+            InputManagerSource.Instance.PlayerMovement.performed += MovementAction;
+            InputManagerSource.Instance.PlayerMovement.canceled += MovementAction;
         }
 
         private void MovementAction(InputAction.CallbackContext ctx) {
