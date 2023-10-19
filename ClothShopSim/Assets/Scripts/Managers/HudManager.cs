@@ -9,6 +9,8 @@ namespace ClothesGame.Managers {
     
     public class HudManager : Singleton<HudManager> {
 
+        public ShopItemManager ShopItemManager;
+        
         [Header("shop panels")]
         public GameObject HairShop;
 

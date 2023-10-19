@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50a17157c247c24685ba872fc79d016, type: 3}
   m_Name: hair_item_0
   m_EditorClassIdentifier: 
+  AnimationLayerID: 0
   Name: Woman White Hair
   Description: White hair in line with ears
   Price: 200
+  Sprite: {fileID: -2046081652, guid: 16f4725bf9d793245a491bc6c63ab37d, type: 3}
+  Type: 0

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50a17157c247c24685ba872fc79d016, type: 3}
   m_Name: hair_item_2
   m_EditorClassIdentifier: 
+  AnimationLayerID: 2
   Name: Woman Blonde Hair
   Description: Straight, shoulder-length blonde hair.
   Price: 1000
+  Sprite: {fileID: -383753881, guid: 352b2879498dc52449df517c093ef522, type: 3}
+  Type: 0

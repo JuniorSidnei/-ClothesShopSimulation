@@ -1,0 +1,10 @@
+using UnityEngine;
+
+    #ROOTNAMESPACEBEGIN#
+    
+    [CreateAssetMenu(menuName = "ExquisiteFishing/", fileName = "")]   
+    public class #SCRIPTNAME# : ScriptableObject {
+ 
+    }
+    
+    #ROOTNAMESPACEEND#

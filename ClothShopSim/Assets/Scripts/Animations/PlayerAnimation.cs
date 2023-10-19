@@ -22,7 +22,7 @@ namespace ClothesGame.Animations {
         [Header("animation layer")]
         private int m_currentHeadLayerIndex;
         private int m_currentTorsoLayerIndex;
-
+        
         private void Awake() {
             m_currentHeadLayerIndex = headLayerIndex;
             m_currentTorsoLayerIndex = torsoLayerIndex;
@@ -40,6 +40,15 @@ namespace ClothesGame.Animations {
             HeadAnimator.SetFloat(MovementY, playerMovement.y);
             TorsoAnimator.SetFloat(MovementX, playerMovement.x);
             TorsoAnimator.SetFloat(MovementY, playerMovement.y);
+        }
+
+        public void UpdateHeadAnimation(int animationLayerID) {
+            if (m_currentHeadLayerIndex != 0) {
+                HeadAnimator.SetLayerWeight(m_currentHeadLayerIndex, 0);
+            }
+
+            m_currentHeadLayerIndex = animationLayerID;
+            HeadAnimator.SetLayerWeight(m_currentHeadLayerIndex, 1);
         }
     }
 }

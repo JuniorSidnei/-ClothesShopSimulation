@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50a17157c247c24685ba872fc79d016, type: 3}
   m_Name: hair_item_3
   m_EditorClassIdentifier: 
+  AnimationLayerID: 3
   Name: Hat
   Description: A beautiful and colorful hat.
   Price: 2000
+  Sprite: {fileID: -917017609, guid: 2d34dcd6fb9b1e146b04ef9d9554e049, type: 3}
+  Type: 0
