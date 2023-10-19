@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c74d0b664186ef459a81b69ce3b5be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headLayerIndex: 2
+  headLayerIndex: 0
   torsoLayerIndex: 1
   PlayerMovement: {fileID: 1816256639}
   BodyAnimator: {fileID: 883759264}
