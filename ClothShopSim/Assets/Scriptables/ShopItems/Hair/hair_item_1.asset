@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50a17157c247c24685ba872fc79d016, type: 3}
   m_Name: hair_item_1
   m_EditorClassIdentifier: 
-  AnimationLayerID: 1
+  AnimationLayerID: 2
   Name: Man Hair
-  Description: A short white haircut
+  Description: A short white haircut.
   Price: 0
-  Sprite: {fileID: 123703074, guid: 48ce48cd25b5eb4489b1cb1dc9d41b45, type: 3}
+  Sprite: {fileID: 407087543, guid: 48ce48cd25b5eb4489b1cb1dc9d41b45, type: 3}
   Type: 0

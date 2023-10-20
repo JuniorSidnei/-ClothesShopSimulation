@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using ClothesGame.Controllers;
+using ClothesGame.Scriptables;
+using ClothesGame.ShopItem;
 using ClothesGame.Utils;
 using UnityEngine;
 
@@ -9,17 +8,37 @@ namespace ClothesGame.Managers {
     
     public class HudManager : Singleton<HudManager> {
 
-        public ShopItemManager ShopItemManager;
-        
+        public ShopItemManager HairShopManager;
+        public ShopItemManager ClothesShopManager;
+        public MarketManager MarketManager;
+
         [Header("shop panels")]
         public GameObject HairShop;
+        public GameObject ClothesShop;
+        public GameObject MarketShop;
 
-        public void OpenHairShop(ShopHouseController.ShopType shopType) {
+        public void OpenHairShop() {
+            HairShopManager.UpdateModelSprites();
+            HairShop.SetActive(true);
+        }
+        
+        public void OpenClothesShop() {
+            ClothesShopManager.UpdateModelSprites();
+            ClothesShop.SetActive(true);
+        }
+
+        public void OpenMarketShop() {
+            MarketShop.SetActive(true);
+            MarketManager.SpawnItemSlots();
+        }
+        
+        public void ShowShop(ShopItemData shopItem, ShopItemSlot shopItemSlot, ShopItemData.ItemType shopType) {
             switch (shopType) {
-                case ShopHouseController.ShopType.Hair:
-                    HairShop.SetActive(true);        
+                case ShopItemData.ItemType.Head:
+                    HairShopManager.SetHairData(shopItem, shopItemSlot);
                     break;
-                case ShopHouseController.ShopType.Clothes:
+                case ShopItemData.ItemType.Torso:
+                    ClothesShopManager.SetTorsoData(shopItem, shopItemSlot);   
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(shopType), shopType, null);

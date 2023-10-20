@@ -1,6 +1,5 @@
 using ClothesGame.Player;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ClothesGame.Animations {
         
@@ -22,13 +21,15 @@ namespace ClothesGame.Animations {
         [Header("animation layer")]
         private int m_currentHeadLayerIndex;
         private int m_currentTorsoLayerIndex;
+        private bool m_isAnimatingHead;
+        private bool m_isAnimatingTorso;
         
         private void Awake() {
             m_currentHeadLayerIndex = headLayerIndex;
             m_currentTorsoLayerIndex = torsoLayerIndex;
             
-            HeadAnimator.SetLayerWeight(m_currentHeadLayerIndex, 1);
-            TorsoAnimator.SetLayerWeight(m_currentTorsoLayerIndex, 1);
+            UpdateHeadAnimation(m_currentHeadLayerIndex);
+            UpdateTorsoAnimation(m_currentTorsoLayerIndex);
         }
 
         private void Update() {
@@ -36,19 +37,54 @@ namespace ClothesGame.Animations {
             
             BodyAnimator.SetFloat(MovementX, playerMovement.x);
             BodyAnimator.SetFloat(MovementY, playerMovement.y);
-            HeadAnimator.SetFloat(MovementX, playerMovement.x);
-            HeadAnimator.SetFloat(MovementY, playerMovement.y);
-            TorsoAnimator.SetFloat(MovementX, playerMovement.x);
-            TorsoAnimator.SetFloat(MovementY, playerMovement.y);
+
+            if (m_isAnimatingHead) {
+                HeadAnimator.SetFloat(MovementX, playerMovement.x);
+                HeadAnimator.SetFloat(MovementY, playerMovement.y);    
+            }
+
+            if (m_isAnimatingTorso) {
+                TorsoAnimator.SetFloat(MovementX, playerMovement.x);
+                TorsoAnimator.SetFloat(MovementY, playerMovement.y);    
+            }
         }
 
         public void UpdateHeadAnimation(int animationLayerID) {
+            if (animationLayerID == 0) {
+                m_currentHeadLayerIndex = animationLayerID;
+                HeadAnimator.gameObject.SetActive(false);
+                m_isAnimatingHead = false;
+                return;
+            }
+            
+            HeadAnimator.gameObject.SetActive(true);
+            m_isAnimatingHead = true;
+            
             if (m_currentHeadLayerIndex != 0) {
                 HeadAnimator.SetLayerWeight(m_currentHeadLayerIndex, 0);
             }
 
             m_currentHeadLayerIndex = animationLayerID;
             HeadAnimator.SetLayerWeight(m_currentHeadLayerIndex, 1);
+        }
+        
+        public void UpdateTorsoAnimation(int animationLayerID) {
+            if (animationLayerID == 0) {
+                m_currentTorsoLayerIndex = animationLayerID;
+                TorsoAnimator.gameObject.SetActive(false);
+                m_isAnimatingTorso = false;
+                return;
+            }
+            
+            TorsoAnimator.gameObject.SetActive(true);
+            m_isAnimatingTorso = true;
+            
+            if (m_currentTorsoLayerIndex != 0) {
+                TorsoAnimator.SetLayerWeight(m_currentTorsoLayerIndex, 0);
+            }
+
+            m_currentTorsoLayerIndex = animationLayerID;
+            TorsoAnimator.SetLayerWeight(m_currentTorsoLayerIndex, 1);
         }
     }
 }

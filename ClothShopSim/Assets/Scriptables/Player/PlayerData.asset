@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5bc34a6fb56de4094a0b6bc493ec0b, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  CurrentEquippedTorso: {fileID: 11400000, guid: 1e387dd8c029f0f41840ccf4532e89ab, type: 2}
-  CurrentEquippedHead: {fileID: 11400000, guid: 9bc85a9c54c772b44bde5a9508b8ff6f, type: 2}
-  Gold: 3000
+  CurrentEquippedTorso: {fileID: 0}
+  CurrentEquippedHead: {fileID: 0}
+  Gold: 243400

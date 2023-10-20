@@ -11,7 +11,6 @@ namespace ClothesGame.Managers {
         public Image TorsoImage;
         public Image HeadImage;
         public TextMeshProUGUI ItemDescriptionText;
-        public TextMeshProUGUI ItemPriceText;
         public PlayerData PlayerData;
         public Button BuyBtn;
         public TextMeshProUGUI PlayerGoldText;
@@ -19,12 +18,16 @@ namespace ClothesGame.Managers {
         private ShopItemData m_currentItem;
         private ShopItemSlot m_currentShopSlot;
         
-        public void SetItemInfo(ShopItemData itemData, ShopItemSlot shopItemSlot) {
-            m_currentItem = itemData;
-            m_currentShopSlot = shopItemSlot;
-            SetupItemData();
+        public void SetHairData(ShopItemData itemData, ShopItemSlot shopItemSlot) {
+            SetItemInfo(itemData, shopItemSlot);
+            SetupHeadItemData();
         }
 
+        public void SetTorsoData(ShopItemData itemData, ShopItemSlot shopItemSlot) {
+              SetItemInfo(itemData, shopItemSlot);
+              SetupTorsoItemData();
+        }
+        
         public void BuyItem() {
             if(m_currentItem.Price > PlayerData.Gold) return;
             
@@ -40,19 +43,44 @@ namespace ClothesGame.Managers {
             }
         }
         
-        private void Awake() {
-            TorsoImage.sprite = PlayerData.CurrentEquippedTorso.Sprite;
-            HeadImage.sprite = PlayerData.CurrentEquippedHead.Sprite;
+        public void UpdateModelSprites() {
+            if (PlayerData.CurrentEquippedHead != null) {
+                HeadImage.color = Color.white;
+                HeadImage.sprite = PlayerData.CurrentEquippedHead.Sprite;
+            } else {
+                HeadImage.color = Color.clear;
+            }
 
+            if (PlayerData.CurrentEquippedTorso != null) {
+                TorsoImage.color = Color.white;
+                TorsoImage.sprite = PlayerData.CurrentEquippedTorso.Sprite;    
+            } else {
+                TorsoImage.color = Color.clear;   
+            }    
+        }
+        
+        private void Awake() {
             PlayerGoldText.text = $"{PlayerData.Gold}";
+            
+            UpdateModelSprites();
         }
 
-        private void SetupItemData() {
-            BuyBtn.interactable = PlayerData.Gold >= m_currentItem.Price;
-            
-            ItemDescriptionText.text = m_currentItem.Description;
-            ItemPriceText.text = $"{m_currentItem.Price}";
+        private void SetupHeadItemData() {
             HeadImage.sprite = m_currentItem.Sprite;
+            HeadImage.color = Color.white;
+        }
+        
+        private void SetupTorsoItemData() {
+            TorsoImage.sprite = m_currentItem.Sprite;
+            TorsoImage.color = Color.white;
+        }
+        
+        private void SetItemInfo(ShopItemData itemData, ShopItemSlot shopItemSlot) {
+            m_currentItem = itemData;
+            m_currentShopSlot = shopItemSlot;
+            
+            BuyBtn.interactable = PlayerData.Gold >= m_currentItem.Price;
+            ItemDescriptionText.text = m_currentItem.Description;
         }
     }
 }

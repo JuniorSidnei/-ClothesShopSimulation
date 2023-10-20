@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50a17157c247c24685ba872fc79d016, type: 3}
   m_Name: armor_blue_item
   m_EditorClassIdentifier: 
-  AnimationLayerID: 3
+  AnimationLayerID: 4
   Name: Sapphire Armor
   Description: A strong and elaborate sapphire armor.
   Price: 5000
-  Sprite: {fileID: 211032083, guid: c852aba49e9ae074c869711363baafe1, type: 3}
-  Type: 0
+  Sprite: {fileID: -312063264, guid: c852aba49e9ae074c869711363baafe1, type: 3}
+  Type: 1

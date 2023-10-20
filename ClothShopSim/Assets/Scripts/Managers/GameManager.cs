@@ -24,6 +24,7 @@ namespace ClothesGame.Managers {
                     break;
                 case ShopItemData.ItemType.Torso:
                     PlayerData.CurrentEquippedTorso = shopItemData;
+                    PlayerAnimation.UpdateTorsoAnimation(shopItemData.AnimationLayerID);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

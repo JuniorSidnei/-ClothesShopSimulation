@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50a17157c247c24685ba872fc79d016, type: 3}
   m_Name: armor_yellow_item
   m_EditorClassIdentifier: 
-  AnimationLayerID: 2
+  AnimationLayerID: 3
   Name: The Golden Armor
   Description: The golden armor. Very resistant and elegant.
   Price: 10000
-  Sprite: {fileID: -958100815, guid: c1ee4a1368889b044a35eeaebc17b882, type: 3}
-  Type: 0
+  Sprite: {fileID: 2058511438, guid: c1ee4a1368889b044a35eeaebc17b882, type: 3}
+  Type: 1

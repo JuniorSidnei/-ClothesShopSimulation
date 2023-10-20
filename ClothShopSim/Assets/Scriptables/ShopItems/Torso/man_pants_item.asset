@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50a17157c247c24685ba872fc79d016, type: 3}
   m_Name: man_pants_item
   m_EditorClassIdentifier: 
+  AnimationLayerID: 1
   Name: Man pants
   Description: Basic man pants.
   Price: 200
-  Sprite: {fileID: -1145672624, guid: 0eca116867fd86b459c2ff357bbdbd27, type: 3}
+  Sprite: {fileID: -1240161144, guid: 0eca116867fd86b459c2ff357bbdbd27, type: 3}
+  Type: 1
