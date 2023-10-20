@@ -36,6 +36,11 @@ namespace ClothesGame.Player {
         }
 
         private void FixedUpdate() {
+            if (GameManager.Instance.CurrentPlayerState == GameManager.PlayerState.HudAction) {
+                Velocity = Vector3.zero;
+                return;
+            }
+            
             var targetVelocity = m_movementInput * m_speed;
             Velocity = Vector3.SmoothDamp(Velocity, targetVelocity, ref m_velocitySmoothing, m_acceleration);
             

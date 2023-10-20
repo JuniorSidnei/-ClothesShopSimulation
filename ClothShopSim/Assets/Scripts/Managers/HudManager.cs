@@ -20,17 +20,24 @@ namespace ClothesGame.Managers {
         public GameObject ClothesShop;
         public GameObject MarketShop;
 
+        public void SetPlayerStateWalking() {
+            GameManager.Instance.CurrentPlayerState = GameManager.PlayerState.Walking;          
+        }
+        
         public void OpenHairShop() {
+            GameManager.Instance.CurrentPlayerState = GameManager.PlayerState.HudAction;
             HairShopManager.UpdateModelSprites();
             HairShop.SetActive(true);
         }
         
         public void OpenClothesShop() {
+            GameManager.Instance.CurrentPlayerState = GameManager.PlayerState.HudAction;
             ClothesShopManager.UpdateModelSprites();
             ClothesShop.SetActive(true);
         }
 
         public void OpenMarketShop() {
+            GameManager.Instance.CurrentPlayerState = GameManager.PlayerState.HudAction;
             MarketShop.SetActive(true);
             MarketManager.SpawnItemSlots();
         }

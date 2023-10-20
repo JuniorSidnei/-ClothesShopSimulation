@@ -1,3 +1,4 @@
+using System;
 using ClothesGame.Scriptables;
 using ClothesGame.ShopItem;
 using TMPro;
@@ -34,7 +35,7 @@ namespace ClothesGame.Managers {
             if(m_currentItem.Price > PlayerData.Gold) return;
             
             PlayerData.Gold -= m_currentItem.Price;
-            GameManager.Instance.EquipCurrentItem(m_currentItem);
+            EquipCurrentItem(m_currentItem);
             InventoryManager.AddItem(m_currentItem, 1);
             PlayerGoldText.text = $"{PlayerData.Gold}";
             m_currentShopSlot.SetItemPurchased();
@@ -44,7 +45,7 @@ namespace ClothesGame.Managers {
                 BuyBtn.interactable = false;
             }
         }
-        
+
         public void UpdateModelSprites() {
             if (PlayerData.CurrentEquippedHead != null) {
                 HeadImage.color = Color.white;
@@ -83,6 +84,21 @@ namespace ClothesGame.Managers {
             
             BuyBtn.interactable = PlayerData.Gold >= m_currentItem.Price;
             ItemDescriptionText.text = m_currentItem.Description;
+        }
+        
+        private void EquipCurrentItem(ShopItemData shopItemData) {
+            switch (shopItemData.Type) {
+                case ShopItemData.ItemType.Head:
+                    PlayerData.CurrentEquippedHead = shopItemData;
+                    GameManager.Instance.PlayerAnimation.UpdateHeadAnimation(shopItemData.AnimationLayerID);
+                    break;
+                case ShopItemData.ItemType.Torso:
+                    PlayerData.CurrentEquippedTorso = shopItemData;
+                    GameManager.Instance.PlayerAnimation.UpdateTorsoAnimation(shopItemData.AnimationLayerID);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }
