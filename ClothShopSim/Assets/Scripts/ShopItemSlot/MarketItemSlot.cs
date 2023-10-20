@@ -5,7 +5,6 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ClothesGame.ShopItem {
@@ -17,6 +16,8 @@ namespace ClothesGame.ShopItem {
         public TextMeshProUGUI PriceText;
         public Image ItemImage;
         public RectTransform ImageRectTransform;
+        public AudioSource HoverSource;
+        public AudioSource ConfirmSource;
         
         public void Setup(ShopItemData item) {
             ShopItem = item;
@@ -34,10 +35,12 @@ namespace ClothesGame.ShopItem {
         }
         
         public void OnPointerEnter(PointerEventData eventData) {
+            HoverSource.Play();
             transform.DOScale(new Vector3(1.2f, 1.2f, 1f), 0.2f);
         }
 
         public void OnPointerClick(PointerEventData eventData) {
+            ConfirmSource.Play();
             HudManager.Instance.MarketManager.SetItemInfo(ShopItem, gameObject);
         }
 

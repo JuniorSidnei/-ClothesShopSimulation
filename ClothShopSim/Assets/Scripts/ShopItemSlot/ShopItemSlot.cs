@@ -14,7 +14,9 @@ namespace ClothesGame.ShopItem {
         public TextMeshProUGUI NameText;
         public TextMeshProUGUI PriceText;
         public Image ItemImage;
-
+        public AudioSource HoverSource;
+        public AudioSource ConfirmSource;
+        
         private bool m_isPurchased;
 
         public void Setup(ShopItemData itemData) {
@@ -29,12 +31,14 @@ namespace ClothesGame.ShopItem {
         public void OnPointerEnter(PointerEventData eventData) {
             if(m_isPurchased) return;
             
+            HoverSource.Play();
             transform.DOScale(new Vector3(1.2f, 1.2f, 1f), 0.2f);
         }
 
         public void OnPointerClick(PointerEventData eventData) {
             if(m_isPurchased) return;
             
+            ConfirmSource.Play();
             HudManager.Instance.ShowShop(ShopItem, this, ShopItem.Type);
         }
 

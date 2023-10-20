@@ -17,6 +17,8 @@ namespace ClothesGame.Inventory {
         public Image ItemImage;
         public Image SlotBg;
         public RectTransform ImageRectTransform;
+        public AudioSource HoverSource;
+        public AudioSource ConfirmSource;
         
         public void SetSelected(bool selected) {
             SlotBg.color = selected ? Color.gray : Color.white;
@@ -62,10 +64,12 @@ namespace ClothesGame.Inventory {
         }
         
         public void OnPointerEnter(PointerEventData eventData) {
+            HoverSource.Play();
             transform.DOScale(new Vector3(1.2f, 1.2f, 1f), 0.2f);
         }
 
         public void OnPointerClick(PointerEventData eventData) {
+            ConfirmSource.Play();
             if (ShopItem.Type == ShopItemData.ItemType.Head) {
                 HudManager.Instance.InventoryController.SetHeadInventoryItem(this);
             }
