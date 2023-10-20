@@ -9,6 +9,7 @@ namespace ClothesGame.Managers {
 
         public InputAction PlayerMovement { get; private set; }
         public InputAction PlayerInteract { get; private set; }
+        public InputAction PlayerInventory { get; private set; }
 
         private void OnEnable() {
             m_inputSource = new InputSource();
@@ -16,6 +17,7 @@ namespace ClothesGame.Managers {
 
             PlayerMovement = m_inputSource.Player.Movement;
             PlayerInteract = m_inputSource.Player.Interact;
+            PlayerInventory = m_inputSource.Player.Inventory;
         }
     }
     

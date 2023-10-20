@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace ClothesGame.ShopItem {
     
-    public class MarketItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler{
+    public class MarketItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler {
        
         public ShopItemData ShopItem;
         public TextMeshProUGUI NameText;

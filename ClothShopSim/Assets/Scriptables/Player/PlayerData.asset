@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   CurrentEquippedTorso: {fileID: 0}
-  CurrentEquippedHead: {fileID: 0}
-  Gold: 243400
+  CurrentEquippedHead: {fileID: 11400000, guid: ab9b6a4641d2dd148b9ab9b860039997, type: 2}
+  Gold: 154200

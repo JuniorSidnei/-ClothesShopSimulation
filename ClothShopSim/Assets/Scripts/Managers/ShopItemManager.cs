@@ -29,6 +29,8 @@ namespace ClothesGame.Managers {
         }
         
         public void BuyItem() {
+            if(m_currentItem == null) return;
+            
             if(m_currentItem.Price > PlayerData.Gold) return;
             
             PlayerData.Gold -= m_currentItem.Price;

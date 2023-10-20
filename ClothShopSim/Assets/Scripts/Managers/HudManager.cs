@@ -1,4 +1,6 @@
 using System;
+using ClothesGame.Controllers;
+using ClothesGame.Inventory;
 using ClothesGame.Scriptables;
 using ClothesGame.ShopItem;
 using ClothesGame.Utils;
@@ -11,7 +13,8 @@ namespace ClothesGame.Managers {
         public ShopItemManager HairShopManager;
         public ShopItemManager ClothesShopManager;
         public MarketManager MarketManager;
-
+        public InventoryController InventoryController;
+        
         [Header("shop panels")]
         public GameObject HairShop;
         public GameObject ClothesShop;

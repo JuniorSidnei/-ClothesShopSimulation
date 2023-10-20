@@ -1,3 +1,4 @@
+using System;
 using ClothesGame.Managers;
 using DG.Tweening;
 using UnityEngine;
@@ -18,6 +19,12 @@ namespace ClothesGame.Controllers {
         private void Start() {
             InputManagerSource.Instance.PlayerInteract.performed += OpenShop;
             InputManagerSource.Instance.PlayerInteract.Disable();
+        }
+
+        private void OnDisable() {
+            if (!InputManagerSource.Instance) { return; }
+            
+            InputManagerSource.Instance.PlayerInteract.performed -= OpenShop;
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
