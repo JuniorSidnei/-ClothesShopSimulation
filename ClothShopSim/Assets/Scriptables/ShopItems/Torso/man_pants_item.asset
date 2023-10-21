@@ -16,5 +16,6 @@ MonoBehaviour:
   Name: Man pants
   Description: Basic man pants.
   Price: 200
+  SellPrice: 100
   Sprite: {fileID: -1240161144, guid: 0eca116867fd86b459c2ff357bbdbd27, type: 3}
   Type: 1

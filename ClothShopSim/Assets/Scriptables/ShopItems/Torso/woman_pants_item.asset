@@ -16,5 +16,6 @@ MonoBehaviour:
   Name: Woman pants
   Description: Basic woman pants.
   Price: 200
+  SellPrice: 100
   Sprite: {fileID: -1841685127, guid: ec30722a1c873094f9a0693f989e5350, type: 3}
   Type: 1

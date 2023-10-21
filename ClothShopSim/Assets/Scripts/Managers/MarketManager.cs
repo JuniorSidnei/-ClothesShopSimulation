@@ -42,7 +42,7 @@ namespace ClothesGame.Managers {
         public void SellItem() {
             if(m_currentItem == null) return;
             
-            PlayerData.Gold += m_currentItem.Price;
+            PlayerData.Gold += m_currentItem.SellPrice;
             ValidateIfEquipped(m_currentItem);
             InventoryManager.RemoveItem(m_currentItem, 1);
             m_currentItem = null;

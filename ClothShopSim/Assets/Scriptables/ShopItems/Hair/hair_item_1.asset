@@ -15,6 +15,7 @@ MonoBehaviour:
   AnimationLayerID: 2
   Name: Man Hair
   Description: A short white haircut.
-  Price: 0
+  Price: 150
+  SellPrice: 75
   Sprite: {fileID: 407087543, guid: 48ce48cd25b5eb4489b1cb1dc9d41b45, type: 3}
   Type: 0

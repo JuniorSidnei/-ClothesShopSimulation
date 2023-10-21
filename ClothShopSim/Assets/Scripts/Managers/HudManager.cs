@@ -10,6 +10,7 @@ namespace ClothesGame.Managers {
     
     public class HudManager : Singleton<HudManager> {
 
+        public GameObject HelperObject;
         public ShopItemManager HairShopManager;
         public ShopItemManager ClothesShopManager;
         public MarketManager MarketManager;
@@ -75,6 +76,8 @@ namespace ClothesGame.Managers {
 
         private void Start() {
             TransitionController.Instance.DoTransitionOut();
+            
+            Destroy(HelperObject, 15f);
         }
     }
 }

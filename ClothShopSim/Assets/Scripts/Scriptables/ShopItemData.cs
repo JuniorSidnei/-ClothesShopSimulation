@@ -14,6 +14,7 @@ namespace ClothesGame.Scriptables {
         [TextArea(1, 5)]
         public string Description;
         public int Price;
+        public int SellPrice;
         public Sprite Sprite;
         public ItemType Type;
     }

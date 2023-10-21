@@ -16,5 +16,6 @@ MonoBehaviour:
   Name: Hat
   Description: A beautiful and colorful hat.
   Price: 2000
+  SellPrice: 1000
   Sprite: {fileID: 588326462, guid: 2d34dcd6fb9b1e146b04ef9d9554e049, type: 3}
   Type: 0

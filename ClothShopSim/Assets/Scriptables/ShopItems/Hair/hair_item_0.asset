@@ -16,5 +16,6 @@ MonoBehaviour:
   Name: Woman White Hair
   Description: White hair in line with ears.
   Price: 200
+  SellPrice: 100
   Sprite: {fileID: -125058852, guid: 16f4725bf9d793245a491bc6c63ab37d, type: 3}
   Type: 0

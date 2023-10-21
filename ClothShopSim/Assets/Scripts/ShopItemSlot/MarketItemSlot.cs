@@ -50,7 +50,7 @@ namespace ClothesGame.ShopItem {
         
         private void Start() {
             NameText.text = ShopItem.Name;
-            PriceText.text = $"{ShopItem.Price}";
+            PriceText.text = $"{ShopItem.SellPrice}";
             ItemImage.sprite = ShopItem.Sprite;
         }
     }

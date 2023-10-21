@@ -16,5 +16,6 @@ MonoBehaviour:
   Name: The Golden Armor
   Description: The golden armor. Very resistant and elegant.
   Price: 10000
+  SellPrice: 5000
   Sprite: {fileID: 2058511438, guid: c1ee4a1368889b044a35eeaebc17b882, type: 3}
   Type: 1

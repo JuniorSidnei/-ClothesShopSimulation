@@ -16,5 +16,6 @@ MonoBehaviour:
   Name: Woman Blonde Hair
   Description: Straight, shoulder-length blonde hair.
   Price: 1000
+  SellPrice: 500
   Sprite: {fileID: 5858177, guid: 352b2879498dc52449df517c093ef522, type: 3}
   Type: 0

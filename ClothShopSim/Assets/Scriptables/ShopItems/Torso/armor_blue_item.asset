@@ -16,5 +16,6 @@ MonoBehaviour:
   Name: Sapphire Armor
   Description: A strong and elaborate sapphire armor.
   Price: 5000
+  SellPrice: 2500
   Sprite: {fileID: -312063264, guid: c852aba49e9ae074c869711363baafe1, type: 3}
   Type: 1
