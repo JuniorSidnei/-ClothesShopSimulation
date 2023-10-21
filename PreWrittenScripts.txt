@@ -1,0 +1,5 @@
+The scripts that i use for commom projects, that are in this project:
+
+- Singleton
+- The editor helper scripts, SceneSelectionOverlay and CreateScriptTemplate
+- InventoryManager and InventoryItem 
