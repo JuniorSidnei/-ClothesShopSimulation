@@ -4,6 +4,7 @@ using ClothesGame.Scriptables;
 using ClothesGame.ShopItem;
 using ClothesGame.Utils;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ClothesGame.Managers {
     
@@ -21,6 +22,7 @@ namespace ClothesGame.Managers {
         public GameObject OptionsMenu;
 
         public void OpenOptions() {
+            Time.timeScale = 0;
             OptionsMenu.SetActive(true);    
         }
         
@@ -57,6 +59,22 @@ namespace ClothesGame.Managers {
                 default:
                     throw new ArgumentOutOfRangeException(nameof(shopType), shopType, null);
             }
+        }
+
+        public void ResumeGame(GameObject optionsMenu) {
+            Time.timeScale = 1;
+            optionsMenu.SetActive(false);
+        }
+        
+        public void QuitToMenu() {
+            Time.timeScale = 1;
+            TransitionController.Instance.DoTransitionIn(() => {
+                SceneManager.LoadScene("MainMenu");
+            });
+        }
+
+        private void Start() {
+            TransitionController.Instance.DoTransitionOut();
         }
     }
 }
