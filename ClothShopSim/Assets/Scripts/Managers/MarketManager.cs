@@ -30,6 +30,8 @@ namespace ClothesGame.Managers {
         }
         
         public void SpawnItemSlots() {
+            PlayerGoldText.text = $"{PlayerData.Gold}";
+            
             foreach (var item in InventoryManager.InventoryItems) {
                 var itemSlot = Instantiate(ItemPrefab, Vector3.zero, quaternion.identity, ItemGridTransform);
                 itemSlot.GetComponent<MarketItemSlot>().Setup(item.ItemData);
@@ -45,7 +47,7 @@ namespace ClothesGame.Managers {
             InventoryManager.RemoveItem(m_currentItem, 1);
             m_currentItem = null;
             ItemDescriptionText.text = "";
-            
+            PlayerGoldText.text = $"{PlayerData.Gold}";
             Destroy(m_currentShopSlot);
         }
         
