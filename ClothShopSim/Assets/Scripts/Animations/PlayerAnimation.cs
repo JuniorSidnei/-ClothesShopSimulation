@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ClothesGame.Animations {
         
     public class PlayerAnimation : MonoBehaviour {
-
+        
         public int headLayerIndex;
         public int torsoLayerIndex;
         

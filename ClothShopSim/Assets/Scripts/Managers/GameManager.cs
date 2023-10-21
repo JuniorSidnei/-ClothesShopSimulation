@@ -17,6 +17,9 @@ namespace ClothesGame.Managers {
         
         private void Awake() {
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+
+            PlayerData.CurrentEquippedTorso = null;
+            PlayerData.CurrentEquippedHead = null;
         }
     }
 }

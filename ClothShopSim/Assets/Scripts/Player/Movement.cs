@@ -42,12 +42,11 @@ namespace ClothesGame.Player {
             }
             
             var targetVelocity = m_movementInput * m_speed;
-            Velocity = Vector3.SmoothDamp(Velocity, targetVelocity, ref m_velocitySmoothing, m_acceleration);
+            m_velocity = Vector3.SmoothDamp(m_velocity, targetVelocity, ref m_velocitySmoothing, m_acceleration);
             
             var oldPos = transform.position;
             m_velocity *= (1 - Time.deltaTime * m_drag);
-            var velocity = m_velocity * Time.deltaTime;
-            transform.Translate(velocity);
+            transform.Translate(m_velocity * Time.deltaTime);
             m_positionDelta = transform.position - oldPos;
         }
     }
