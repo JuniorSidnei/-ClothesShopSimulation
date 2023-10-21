@@ -1,6 +1,5 @@
 using System;
 using ClothesGame.Controllers;
-using ClothesGame.Inventory;
 using ClothesGame.Scriptables;
 using ClothesGame.ShopItem;
 using ClothesGame.Utils;
@@ -15,11 +14,16 @@ namespace ClothesGame.Managers {
         public MarketManager MarketManager;
         public InventoryController InventoryController;
         
-        [Header("shop panels")]
+        [Header("panels")]
         public GameObject HairShop;
         public GameObject ClothesShop;
         public GameObject MarketShop;
+        public GameObject OptionsMenu;
 
+        public void OpenOptions() {
+            OptionsMenu.SetActive(true);    
+        }
+        
         public void SetPlayerStateWalking() {
             GameManager.Instance.CurrentPlayerState = GameManager.PlayerState.Walking;          
         }

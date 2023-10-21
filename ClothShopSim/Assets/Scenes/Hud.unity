@@ -1342,6 +1342,7 @@ MonoBehaviour:
   HairShop: {fileID: 1833550480}
   ClothesShop: {fileID: 357873678}
   MarketShop: {fileID: 439013709}
+  OptionsMenu: {fileID: 1103849248}
 --- !u!82 &333650789
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3306,6 +3307,7 @@ GameObject:
   - component: {fileID: 714079081}
   - component: {fileID: 714079080}
   - component: {fileID: 714079079}
+  - component: {fileID: 714079082}
   m_Layer: 5
   m_Name: Resume_btn
   m_TagString: Untagged
@@ -3390,18 +3392,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 333650788}
-        m_TargetAssemblyTypeName: ClothesGame.Managers.HudManager, Assembly-CSharp
-        m_MethodName: SetPlayerStateWalking
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
       - m_Target: {fileID: 333650790}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -3452,6 +3442,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714079077}
   m_CullTransparentMesh: 1
+--- !u!114 &714079082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714079077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 333650791}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &731333094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,6 +3658,7 @@ GameObject:
   - component: {fileID: 788209202}
   - component: {fileID: 788209201}
   - component: {fileID: 788209200}
+  - component: {fileID: 788209203}
   m_Layer: 5
   m_Name: OptionsBtn
   m_TagString: Untagged
@@ -3711,9 +3731,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1996869911}
-        m_TargetAssemblyTypeName: ClothesGame.Controllers.InventoryController, Assembly-CSharp
-        m_MethodName: OpenInventory
+      - m_Target: {fileID: 333650788}
+        m_TargetAssemblyTypeName: ClothesGame.Managers.HudManager, Assembly-CSharp
+        m_MethodName: OpenOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3773,6 +3793,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788209198}
   m_CullTransparentMesh: 1
+--- !u!114 &788209203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788209198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 333650791}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &805004136
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,7 +5121,6 @@ GameObject:
   - component: {fileID: 1103849249}
   - component: {fileID: 1103849252}
   - component: {fileID: 1103849251}
-  - component: {fileID: 1103849250}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
@@ -5104,24 +5152,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1103849250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103849248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 282ccc03ab254fa489b2dce0de6d6b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TorsoImage: {fileID: 0}
-  HeadImage: {fileID: 0}
-  ItemDescriptionText: {fileID: 0}
-  PlayerData: {fileID: 11400000, guid: 6c025c70d8a3eac409b63963d03b4728, type: 2}
-  BuyBtn: {fileID: 1761964050}
-  PlayerGoldText: {fileID: 0}
 --- !u!114 &1103849251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6641,6 +6671,7 @@ GameObject:
   - component: {fileID: 1505963709}
   - component: {fileID: 1505963708}
   - component: {fileID: 1505963707}
+  - component: {fileID: 1505963710}
   m_Layer: 5
   m_Name: InventoryBtn
   m_TagString: Untagged
@@ -6775,6 +6806,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505963705}
   m_CullTransparentMesh: 1
+--- !u!114 &1505963710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505963705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 333650791}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &1570072186
 GameObject:
   m_ObjectHideFlags: 0
@@ -7546,6 +7606,7 @@ GameObject:
   - component: {fileID: 1761964052}
   - component: {fileID: 1761964051}
   - component: {fileID: 1761964050}
+  - component: {fileID: 1761964053}
   m_Layer: 5
   m_Name: Menu_btn
   m_TagString: Untagged
@@ -7618,7 +7679,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1103849250}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ClothesGame.Managers.ShopItemManager, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 1
@@ -7680,6 +7741,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761964048}
   m_CullTransparentMesh: 1
+--- !u!114 &1761964053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761964048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 333650791}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &1828375582
 GameObject:
   m_ObjectHideFlags: 0
